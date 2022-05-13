@@ -11,6 +11,8 @@ media
 .DS_Store
 *.sqlite3
 .env
+*/settings.py
+**/.env
 .vscode/
 
 
