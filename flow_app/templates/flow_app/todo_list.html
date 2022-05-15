@@ -16,7 +16,7 @@
                 <div>
                     <div
                         role="button"
-                        onclick="location.href='#'">
+                        onclick="location.href='{% url "item-update" todo_list.id todo.id %}' ">
                         {{ todo.title }}
                         (Due {{ todo.due_date | date:"l, F j" }})
                     </div>
@@ -32,7 +32,12 @@
             <input
                 value="Add a new item"
                 type="button"
-                onclick="location.href='#'" />
+                onclick="location.href='{% url "item-add" todo_list.id %}'"
+            />
+            <input 
+                value="Delete this list"
+                type="button"
+                onclick="location.href= '{% url "list-delete" todo_list.id %} ' " />
         </p>
     </div>
 </div>
