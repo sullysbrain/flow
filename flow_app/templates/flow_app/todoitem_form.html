@@ -20,8 +20,8 @@
         onclick="location.href='{% url "list" todo_list.id %}'">
     {% if object %}
         <input
-            value='Delete this item',
-            type='button',
+            value='Delete this item'
+            type='button'
             onclick="location.href='{% url "item-delete" todo_list.id object.id %}' ">
     {% endif %}
 </form>
