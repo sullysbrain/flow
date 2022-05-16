@@ -5,6 +5,11 @@ from django.urls import reverse
 def one_week_hence():
     return timezone.now() + timezone.timedelta(days=7)
 
+class Employee(models.Model):
+    pass
+
+
+
 class ToDoList(models.Model):
     title = models.CharField(max_length=100, unique=True)
 
@@ -31,3 +36,7 @@ class ToDoItem(models.Model):
 
     class Meta:
         ordering = ["due_date"]
+
+class Phases(models.Model):
+    pass
+
