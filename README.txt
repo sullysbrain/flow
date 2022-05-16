@@ -14,7 +14,7 @@ Set Piece / Media (ie: current list)
         Color Code for on time, on pace, etc
 
     Show
-    Phases
+    Current Phase
         Phase names
         Phase Start date
         Phase Estimated End date
@@ -25,11 +25,19 @@ Phases
     Phase Number (order)
     Phase name
 
+
 Employee
     Department
     Role
+    Tasks (relational database lookup)
 
 
+Things to monitor
+    scope creep
+    multiple revisions
+    scope ill defined
+    estimates inaccurate
+    costs inaccurate
 
 
         
