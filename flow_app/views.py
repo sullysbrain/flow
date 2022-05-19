@@ -14,11 +14,6 @@ class ListListView(ListView):
     model = ToDoList
     template_name = "flow_app/index.html"
 
-# New May 18
-class EmployeeListView(ListView):
-    model = Employee
-    template_name = "flow_app/index.html"
-
 class ItemListView(ListView):
     model = ToDoItem
     template_name = "flow_app/todo_list.html"
@@ -31,9 +26,42 @@ class ItemListView(ListView):
         context["todo_list"] = ToDoList.objects.get(id=self.kwargs["list_id"])
         return context
 
+class EmployeeListView(ListView):
+    model = Employee
+    template_name = "flow_app/employee_list.html"
+
+class EmployeeCreate(CreateView):
+    model = Employee
+    fields = [
+        "first_name",
+        "last_name",
+    ]
+    def get_context_data(self):
+        context = super(EmployeeCreate, self).get_context_data()
+        context["first_name"] = "Add a NEW employee"
+        return context
+
+class EmployeeUpdate(UpdateView):
+    model = Employee
+    fields = [
+        "first_name",
+        "last_name",
+    ]
+
+    def get_context_data(self):
+        context = super(ItemUpdate, self).get_context_data()
+        context["first_name"] = "First name"
+        # context["title"] = "Edit item"
+        return context
+
+    def get_success_url(self):
+        return reverse("employee_list", args=[self.object.employee_id])
+
+
 class ListCreate(CreateView):
     model = ToDoList
     fields = ["title"]
+    template_name = "flow_app/employee_form.html"
 
     def get_context_data(self):
         context = super(ListCreate, self).get_context_data()
@@ -82,6 +110,8 @@ class ItemUpdate(UpdateView):
 
     def get_success_url(self):
         return reverse("list", args=[self.object.todo_list_id])
+
+
 
 
 class ListDelete(DeleteView):

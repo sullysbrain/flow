@@ -18,6 +18,11 @@ class Employee(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
 
+    def get_absolute_url(self):
+        return reverse(
+            "employee-update", args=[str(self.employee_list.id), str(self.id)]
+        )
+
     def __str__(self):
         return self.first_name + " " + self.last_name
 
@@ -25,7 +30,6 @@ class ToDoList(models.Model):
     title = models.CharField(max_length=100, unique=True)
     creationDate = timezone.now()
     # dueDate = date()
-
 
     def get_absolute_url(self):
         return reverse("list", args=[self.id])

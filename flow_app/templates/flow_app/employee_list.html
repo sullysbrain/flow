@@ -1,0 +1,32 @@
+<!-- todo_list/flow_app/templates/flow_app/todo_list.html -->
+
+{% extends "base.html" %}
+
+{% block content %}
+<div>
+    <div>
+        <div>
+            <h3>Edit employees:</h3>
+        </div>
+
+        <ul>
+            {% for employee in object_list %}
+            <li>
+                <div>
+                    <div
+                        role="button"
+                        onclick="location.href='{% url "employee-update" employee.id %}' ">
+                        {{ employee.first_name }} {{ employee.last_name }}
+                    </div>
+
+                </div>
+            </li>
+
+            {% empty %}
+            <p>There are no employee in this list.</p>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+{% endblock %}
