@@ -8,10 +8,15 @@ from django.views.generic import (
     UpdateView,
     DeleteView,
 )
-from .models import ToDoList, ToDoItem
+from .models import ToDoList, ToDoItem, Employee
 
 class ListListView(ListView):
     model = ToDoList
+    template_name = "flow_app/index.html"
+
+# New May 18
+class EmployeeListView(ListView):
+    model = Employee
     template_name = "flow_app/index.html"
 
 class ItemListView(ListView):

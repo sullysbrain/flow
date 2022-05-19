@@ -1,3 +1,4 @@
+from datetime import datetime, date
 from django.db import models
 from django.utils import timezone
 from django.urls import reverse
@@ -7,6 +8,8 @@ def one_week_hence():
 
 class Project(models.Model):
     title = models.CharField(max_length=100, unique=True)
+    creationDate = timezone.now()
+    # dueDate = date()
 
     def __str__(self):
         return self.title
@@ -20,6 +23,9 @@ class Employee(models.Model):
 
 class ToDoList(models.Model):
     title = models.CharField(max_length=100, unique=True)
+    creationDate = timezone.now()
+    # dueDate = date()
+
 
     def get_absolute_url(self):
         return reverse("list", args=[self.id])
