@@ -1,10 +1,15 @@
 from datetime import datetime, date
 from django.db import models
+from django.forms import CharField
 from django.utils import timezone
 from django.urls import reverse
 
 def one_week_hence():
     return timezone.now() + timezone.timedelta(days=7)
+
+class Tag(models.Model):
+    title = models.CharField(max_length=100, unique=True)
+    
 
 class Project(models.Model):
     title = models.CharField(max_length=100, unique=True)
