@@ -34,6 +34,7 @@ class Employee(models.Model):
 class ToDoList(models.Model):
     title = models.CharField(max_length=100, unique=True)
     creationDate = timezone.now()
+    tags = models.ManyToManyField(Tag)
     # dueDate = date()
 
     def get_absolute_url(self):
