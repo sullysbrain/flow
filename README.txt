@@ -4,40 +4,4 @@ README.txt
 
 The purpose of Flow is to track multiple projects through their lifetime and visualize the data to find efficiencies and inefficiencies of each project to help alleviate bottlenecks.
 
-SHOW
-
-Set Piece / Media (ie: current list)
-    Task (ie: current todo)
-        Employee Assigned
-        Kickoff date
-        Estimated Completion date
-        Color Code for on time, on pace, etc
-
-    Show
-    Current Phase
-        Phase names
-        Phase Start date
-        Phase Estimated End date
-    Employee working on project    
-
-Phases
-    Phase Color
-    Phase Number (order)
-    Phase name
-
-
-Employee
-    Department
-    Role
-    Tasks (relational database lookup)
-
-
-Things to monitor
-    scope creep
-    multiple revisions
-    scope ill defined
-    estimates inaccurate
-    costs inaccurate
-
-
-        
+Designed specifically for gig workers and client contact tracking.
